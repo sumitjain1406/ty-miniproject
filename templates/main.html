@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+{% block title %}
+<title>BMI Calculator</title>
+{% endblock title %}
+<form method="POST">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name" name='name' value = {{name}} required>
+  </div>
+  <div class="form-group">
+    <label for="weight">Weight(kg)</label>
+    <input type="number" step="0.01" class="form-control" id="weight" aria-describedby="emailHelp" placeholder="Weight" name="weight" value = {{weight}} required>
+  </div>
+  <div class="form-group">
+    <label for="height">Height(cm)</label>
+    <input type="number" step="0.01" class="form-control" id="height" aria-describedby="emailHelp" placeholder="Height" name="height" value = {{height}} required>
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input type="number" class="form-control" id="age" aria-describedby="emailHelp" placeholder="Age" name="age" value = {{age}} required>
+  </div>
+  {% if gender == "" %}
+    <label class="form-check-label" for="radio1">Gender</label>
+    <div id="radio1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="male" value="M" checked disabled>
+        <label class="form-check-label" for="male">
+          Male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="female" value="F" disabled>
+        <label class="form-check-label" for="female">
+          Female
+        </label>
+      </div>
+    </div>
+  {% else %}
+    <label class="form-check-label" for="radio1">Gender</label>
+    <div id="radio1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="male" value="M" disabled>
+        <label class="form-check-label" for="male">
+          Male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="gender" id="female" value="F" checked disabled>
+        <label class="form-check-label" for="female">
+          Female
+        </label>
+      </div>
+    </div>
+  {% endif %}
+  <div class = "text-center"><button type="submit" class="btn btn-primary">Submit</button></div>
+</form>
+
+{% endblock content %}

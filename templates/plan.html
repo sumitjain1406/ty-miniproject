@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% block title %}
+<title>Diet Plan</title>
+{% endblock title %}
+<h4 style="background-color: #1F4690 ;color: #F7EC09;" class = "px-3">Name: {{name}}</h4>
+<h4 style="background-color: #1F4690 ;color: #F7EC09;" class = "px-3">Gender: {{gender}}</h4>
+<h4 style="background-color: #1F4690 ;color: #F7EC09;" class = "px-3">BMI: {{bmi}}</h4>
+<h3 style="background-color: #1F4690 ;color: #F7EC09;" class = "px-3">Your Meal Plan:</h3>
+<ul style="background-color: #1F4690 ;color: #F7EC09;" class = "px-3">
+{% for i in diet %}
+	<li class = " mx-2 px-3"> {{i}} </li>
+{% endfor %}
+</ul>
+{% comment %} <ul>
+	<li>Breakfast: Whole-wheat English muffin topped with 2 tablespoons natural peanut butter and 1/2 small sliced banana, and Milk OR 1 cup calcium- and vitamin D-fortified orange juice.
+	<li>Morning Snack: 1 Fresh Fruit, Butter and Cheese Contained Foods.
+	<li>Lunch: Curried shrimp salad , Chapati 3 ,Vegetabes and 1 cup Warm Milk
+	<li>Afternoon Snack: 6-ounce container light yogurt , Butter,Shake etc.
+	<li>Dinner:  salad,1 teaspoon olive oil, and 1 medium baked sweet potato. : Chapati 2 ,Vegetabes and 1 cup Warm Milk
+	<li>Nutrition info for the day: 1,941calories, 94g protein, 64g fat (17g sat), 243g carbs, 34g fiber
+</ul>
+<h4>Female:- Height: 140 –150 and wt. <50 - 60 </h4>
+<ul>
+	<li>Breakfast: 1 cup high-fiber cereal (such as bran flakes) with 1 cup 1-percent milk and 1 cup blueberries, and 1 cup green tea.
+	<li>Morning Snack: 1 medium apple with 1 tablespoon soy-nut butter
+	<li>Lunch: Veggie burger on a whole wheat bun with 2 slices low-fat cheddar cheese (1 ounce each), and a 6-ounce can low-sodium vegetable juice
+	<li>Afternoon Snack: 2 tablespoons hummus with 6 whole wheat crackers
+	<li>Dinner: 3 ounces broiled salmon over 1 cup barley pilaf, and 6 asparagus spears sautéed in 1 teaspoon olive oil
+Nutrition info for the day: 1,656 calories, 92g protein, 48g fat (13g sat), 228g carbs, 39g fiber
+</ul> {% endcomment %}
+<a href = "/logout"type="button" class="btn btn-success">Logout</a>
+{% endblock content %}

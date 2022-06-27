@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>BMI Plan</title>
+{% endblock title %}
+{% block content %}
+<h2 class="text-center alert alert-dark">Your BMI: {{bmi}}</h2>
+<img src="{%static 'images/BMI.jpg'%}" alt="Responsive image" width="1000" height="330">
+<div class = "text-center"><a href="/calculator/plan" class="btn btn-primary my-3">View Diet Plan</a></div>
+{% endblock content %}
